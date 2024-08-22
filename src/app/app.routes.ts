@@ -7,7 +7,7 @@ export const routes: Routes = [
     children: [
       {
         path: 'mapa',
-        title: 'Mapa',
+        title: 'Visor Cartografico',
         loadComponent: () => import('./geovisor/pages/mapa/mapa.component'),
       },
       {
@@ -23,12 +23,12 @@ export const routes: Routes = [
     children: [
       {
         path: 'login',
-        title: 'login',
+        title: 'Ingreso',
         loadComponent: () => import('./auth/pages/login/login.component'),
       },
       {
         path: 'register',
-        title: 'register',
+        title: 'Registrar',
         loadComponent: () => import('./auth/pages/register/register.component'),
       },
       {
@@ -40,6 +40,7 @@ export const routes: Routes = [
   },
   {
     path: 'error404',
+    title:'Error de pagina',
     loadComponent: () => import('./shared/error404/error404.component'),
   },
   {

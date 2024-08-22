@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterModule],
   templateUrl: './geovisor.component.html',
   styles: ``
 })
-export default class GeovisorComponent {
-
-}
+export default class GeovisorComponent {}
