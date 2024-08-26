@@ -11,6 +11,11 @@ export const routes: Routes = [
         loadComponent: () => import('./geovisor/pages/mapa/mapa.component'),
       },
       {
+        path:'mapa3D',
+        title:'Visor Cartografico 3D',
+        loadComponent: () => import('./geovisor/pages/map3d/map3d.component'),
+      },
+      {
         path: '',
         redirectTo: 'mapa',
         pathMatch: 'full',

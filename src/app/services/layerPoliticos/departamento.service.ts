@@ -26,19 +26,8 @@ export class LimPoliticosService {
       symbol: fillSymbol,
     });
     const popup = new PopupTemplate({
-      title: '{NOMBDEP}',
-      content: [
-        {
-          type: 'fields',
-          fieldInfos: [
-            {
-              fieldName: 'CODDEP',
-              label: 'Codigo',
-              visible: true,
-            },
-          ],
-        },
-      ],
+      title: 'Código de ubigeo: ({CODDEP})',
+      content: 'Departamento de {NOMBDEP}'
     });
     const labelClass = new LabelClass({
       labelExpressionInfo: { expression: '$feature.NOMBDEP' },
@@ -59,12 +48,15 @@ export class LimPoliticosService {
     });
 
     this.limDepartamento = new FeatureLayer({
+      title: 'Departamento',
       url: 'https://winlmprap09.midagri.gob.pe/winlmprap14/rest/services/ideMidagri/Limites_Censales/MapServer/0',
-      title: 'DEPARTAMENTO',
-      popupTemplate: popup,
-      renderer: renderer,
       labelingInfo: [labelClass],
       visible: true,
+      outFields: ['*'],
+      popupTemplate: popup,
+      renderer: renderer,
+
+
     });
   }
   getLimiteDepartamento(): FeatureLayer {
