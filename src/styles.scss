@@ -71,7 +71,7 @@ body {
 	padding: 6px;
 }
 .esri-component.esri-widget {
-	background-color: #1ca956;
+	background-color: #fff;
 	color: #000;
 }
 .esri-component.esri-expand {
@@ -83,18 +83,18 @@ body {
 	color: #1e293b;
 }
 .esri-component.esri-widget .esri-widget--button {
-	background-color: #1ca956;
+	background-color: #ffff;
 }
 .esri-component.esri-widget .esri-widget--button.hover {
-	background-color: #1ca956;
+	background-color: #fff;
 }
 
 .esri-collapse__icon {
 	opacity: 1;
-	color: #f8f8f8;
+	color: black;
 }
 .button-padding.content--slotted.icon-start-empty.icon-end-empty {
-	background-color: #1ca956;
+	background-color: #ffff;
 }
 
 :root {
