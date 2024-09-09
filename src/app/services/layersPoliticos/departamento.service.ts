@@ -7,10 +7,18 @@ import PopupTemplate from '@arcgis/core/PopupTemplate.js';
 import SimpleFillSymbol from '@arcgis/core/symbols/SimpleFillSymbol.js';
 import SimpleRenderer from '@arcgis/core/renderers/SimpleRenderer.js';
 
+
+
+
+
+
 @Injectable({
   providedIn: 'root',
 })
+
+
 export class LimPoliticosService {
+  
   private limDepartamento: FeatureLayer;
   constructor() {
     const fillSymbol = new SimpleFillSymbol({
@@ -55,9 +63,8 @@ export class LimPoliticosService {
       outFields: ['*'],
       popupTemplate: popup,
       renderer: renderer,
-
-
     });
+
   }
   getLimiteDepartamento(): FeatureLayer {
     return this.limDepartamento;

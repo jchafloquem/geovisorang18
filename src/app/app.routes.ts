@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
+  //*Rutas del GeoVisor
   {
     path: 'geovisor',
     loadComponent: () => import('./geovisor/geovisor.component'),
@@ -22,6 +23,7 @@ export const routes: Routes = [
       },
     ],
   },
+  //*Rutas del Login
   {
     path: 'auth',
     loadComponent: () => import('./auth/auth.component'),
@@ -43,11 +45,13 @@ export const routes: Routes = [
       },
     ],
   },
+  //*Ruta de error
   {
     path: 'error404',
     title:'Error de pagina',
     loadComponent: () => import('./shared/error404/error404.component'),
   },
+  //*Ruta simples
   {
     path: '',
     redirectTo: '/geovisor',

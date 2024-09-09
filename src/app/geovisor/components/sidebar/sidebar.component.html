@@ -10,7 +10,7 @@
         class=""
         color="primary"
         [ngClass]="{
-          'text-white bg-secondary rounded-none ': subMenu === 'capas'
+          'text-white bg-accent rounded-none ': subMenu === 'capas'
         }"
         (click)="clickToogleMenu('capas')"
       >
@@ -21,7 +21,7 @@
         class=""
         color="primary"
         [ngClass]="{
-          'text-white bg-secondary rounded-none ': subMenu === 'leyendas'
+          'text-white bg-accent rounded-none ': subMenu === 'leyendas'
         }"
         (click)="clickToogleMenu('leyendas')"
       >
@@ -32,44 +32,77 @@
         class=""
         color="primary"
         [ngClass]="{
-          'text-white bg-secondary rounded-none ': subMenu === 'filtros'
+          'text-white bg-accent rounded-none ': subMenu === 'busqueda'
         }"
-        (click)="clickToogleMenu('filtros')"
+        (click)="clickToogleMenu('busqueda')"
       >
-        <mat-icon class="material-icons-round">filter_alt</mat-icon>
+        <mat-icon class="material-icons-round">search</mat-icon>
       </button>
       <button
-      mat-icon-button
-      class=""
-      color="primary"
-      [ngClass]="{
-        'text-white bg-secondary rounded-none ': subMenu === 'login'
-      }"
-      (click)="clickToogleMenu('login')"
-    >
-      <mat-icon class="material-icons-round">login</mat-icon>
-    </button>
+        mat-icon-button
+        class=""
+        color="primary"
+        [ngClass]="{
+          'text-white bg-accent rounded-none ': subMenu === 'imprimir'
+        }"
+        (click)="clickToogleMenu('imprimir')"
+      >
+        <mat-icon class="material-icons-round">print</mat-icon>
+      </button>
       <button
-      mat-icon-button
-      class=""
-      color="primary"
-      [ngClass]="{
-        'text-white bg-secondary rounded-none ': subMenu === 'config'
-      }"
-      (click)="clickToogleMenu('config')"
-    >
-      <mat-icon class="material-icons-round">build</mat-icon>
-    </button>
+        mat-icon-button
+        class=""
+        color="primary"
+        [ngClass]="{
+          'text-white bg-accent rounded-none ': subMenu === 'streetview'
+        }"
+        (click)="clickToogleMenu('streetview')"
+      >
+        <mat-icon class="material-icons-round">3d_rotation</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        class=""
+        color="primary"
+        [ngClass]="{
+          'text-white bg-accent rounded-none ': subMenu === 'config'
+        }"
+        (click)="clickToogleMenu('config')"
+      >
+        <mat-icon class="material-icons-round">settings</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        class=""
+        color="primary"
+        [ngClass]="{
+          'text-white bg-accent rounded-none ': subMenu === 'login'
+        }"
+        (click)="clickToogleMenu('login')"
+      >
+        <mat-icon class="material-icons-round">login</mat-icon>
+      </button>
     </div>
     <div>
       <button
         mat-icon-button
-        class="bg-secondary text-white rounded-none"
+        class=""
+        color="primary"
+        [ngClass]="{
+          'text-white bg-slate-600 rounded-none ': subMenu === 'logout'
+        }"
+        (click)="clickToogleMenu('logout')"
+      >
+        <mat-icon class="material-icons-round">logout</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        class="bg-accent text-white rounded-none"
         color="primary"
         (click)="clickToogleMenu()"
       >
         <mat-icon class="material-icons-round">{{
-          this.toogleMenu ? "chevron_left" : "chevron_right"
+          this.toogleMenu ? "arrow_back" : "arrow_forward"
         }}</mat-icon>
       </button>
     </div>
@@ -79,17 +112,21 @@
     [ngClass]="{ 'menu__container--open': toogleMenu }"
   >
     <div
-      class="bg-[#1ca956] h-[48px] w-full text-left text-base text-white font-medium flex flex-row justify-start items-center border-0 border-b-4 border-solid border-accent pl-2"
+      class="bg-[#2b6cb0] h-[48px] w-full text-left text-base text-white font-medium flex flex-row justify-start items-center border-0 border-b-4 border-solid border-accent pl-2"
     >
       <span>
         {{ subMenu | uppercase }}
       </span>
     </div>
     <div class="overflow-y-auto overflow-x-hidden max-h-[calc(100%-48px)]">
-      @if (subMenu==='capas') { } @if (subMenu==='leyendas') { }
+      @if (subMenu==='capas') { }
+
+      @if (subMenu==='leyendas') {
+        <app-leyend class="h-full"></app-leyend>
+       }
       <app-filtro
         class="h-full"
-        [ngClass]="{ hidden: subMenu !== 'filtros' }"
+        [ngClass]="{ hidden: subMenu !== 'busqueda' }"
       ></app-filtro>
     </div>
   </div>

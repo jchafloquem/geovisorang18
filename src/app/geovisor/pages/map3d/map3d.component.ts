@@ -9,11 +9,12 @@ import {
 
 //*librerias de ArcGIS 4.30.9
 import { GeoViewMap3dService } from '../../../services/geoViewMap3d.service';
+import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-map3d',
   standalone: true,
-  imports: [],
+  imports: [SidebarComponent],
   templateUrl: './map3d.component.html',
   styleUrl: './map3d.component.scss',
 })
